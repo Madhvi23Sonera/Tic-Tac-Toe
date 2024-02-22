@@ -1,0 +1,178 @@
+body {
+  background-image: url('tic-tac-toe2.jpg');
+  background-color: rgba(235, 225, 225, 0.8); /* Lighter background color */
+  background-size: cover; /* Cover the entire body */
+
+  background-attachment: fixed; /* Fix the background image */
+  margin: 20px; /* Add margin to the body */
+  padding: 0; /* Remove default padding */
+}
+
+
+/* Add this to your existing CSS */
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #49658a, #1c4646, #2e4661); /* Multicolor gradient background */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: colorChange 5s ease infinite; /* Animation properties */
+}
+
+@keyframes colorChange {
+  0% { background-position: 0% 50%; } /* Initial position of gradient */
+  50% { background-position: 100% 50%; } /* Transition to final position */
+  100% { background-position: 0% 50%; } /* Reset to initial position */
+}
+
+/* Add this to your existing CSS */
+
+.winner-message {
+  display: flex;
+  align-items: center;
+}
+
+.winner-message p {
+  margin-right: 10px; /* Adjust the margin as needed */
+}
+
+
+.square {
+  background: #e7ecd2;
+  border: 2px solid #52533f;
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 70px;
+  height: 120px;
+  width: 120px;
+  margin: 9px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.square:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square.clicked {
+  transform: scale(1.1);
+}
+
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.game-board {
+  background-color: rgba(122, 117, 85, 0.8);
+  border-radius: 80px;
+  padding: 30px;
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.square {
+  background: #e7ecd2;
+  border: 2px solid #52533f;
+  float: left;
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 70px;
+  height: 120px;
+  width: 120px;
+  margin: 9px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.square:hover {
+  background-color: #d1d4a2;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.game-info {
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: -10px;
+  background: linear-gradient(to right, #3d3f61, #49306d, #335f56, #754255, #3b2d57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.reset-button {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+  background-color: #45a049;
+}
+/* For small screens */
+@media (max-width: 768px) {
+  .game-board {
+    padding: 20px; /* Reduce padding for smaller screens */
+    border-radius: 40px; /* Adjust border radius */
+  }
+
+  .square {
+    font-size: 24px; /* Decrease font size for smaller screens */
+    height: 80px; /* Adjust height */
+    width: 80px; /* Adjust width */
+    line-height: 50px; /* Adjust line height */
+  }
+
+  .game-info {
+    font-size: 36px; /* Decrease font size for smaller screens */
+  }
+}
+
+/* For larger screens */
+@media (min-width: 1200px) {
+  .game-board {
+    padding: 40px; /* Increase padding for larger screens */
+    border-radius: 100px; /* Adjust border radius */
+  }
+
+  .square {
+    font-size: 48px; /* Increase font size for larger screens */
+    height: 90px; /* Adjust height */
+    width: 90px; /* Adjust width */
+    line-height: 100px; /* Adjust line height */
+  }
+
+  .game-info {
+    font-size: 64px; /* Increase font size for larger screens */
+  }
+}
